@@ -5,7 +5,7 @@ package com.example.a4k.dynamicfeatures.caractersfavorites.ui.adapter
 // import androidx.databinding.ViewDataBinding
 // import com.example.a4k.core.database.characterfavorite.CharacterFavorite
 // import com.example.a4k.dynamicfeatures.charactersfavorites.databinding.ListItemCharactersFavoriteBinding
-// import com.example.a4k.dynamicfeatures.charactersfavorites.ui.adapter.holders.CharacterFavoriteViewHolder
+// import com.example.a4k.dynamicfeatures.charactersfavorites.ui.favorite.adapter.holders.CharacterFavoriteViewHolder
 // import io.mockk.MockKAnnotations
 // import io.mockk.every
 // import io.mockk.impl.annotations.MockK

@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.navigation.NavController
+import com.example.a4k.dynamicfeatures.home.R
 
 val NAV_FRAGMENTS_ID = setOf(R.id.characters_list_fragment, R.id.characters_favorites_fragment)
 

@@ -1,10 +1,10 @@
-package com.example.a4k.dynamicfeatures.charactersfavorites.ui.adapter.holders
+package com.example.a4k.dynamicfeatures.charactersfavorites.ui.favorite.adapter.holders
 
 import android.view.LayoutInflater
 import androidx.recyclerview.widget.RecyclerView
 import com.example.a4k.commons.ui.base.BaseViewHolder
 import com.example.a4k.core.database.characterfavorite.CharacterFavorite
-import com.example.a4k.dynamicfeatures.charactersfavorites.ui.databinding.ListItemCharactersFavoriteBinding
+import com.example.a4k.dynamicfeatures.charactersfavorites.databinding.ListItemCharactersFavoriteBinding
 
 /**
  * Class describes character favorite view and metadata about its place within the [RecyclerView].

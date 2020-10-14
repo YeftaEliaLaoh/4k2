@@ -6,14 +6,16 @@ import android.view.MenuInflater
 import android.view.View
 import androidx.lifecycle.Observer
 import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
-import com.example.a4k.SampleApp
+import com.example.a4k.android.SampleApp
 import com.example.a4k.commons.ui.base.BaseFragment
 import com.example.a4k.commons.ui.extensions.setupWithNavController
 import com.example.a4k.core.utils.ThemeUtils
-import com.example.a4k.dynamicfeatures.home.ui.databinding.FragmentHomeBinding
+import com.example.a4k.dynamicfeatures.home.R
+import com.example.a4k.dynamicfeatures.home.databinding.FragmentHomeBinding
 import com.example.a4k.dynamicfeatures.home.ui.di.DaggerHomeComponent
 import com.example.a4k.dynamicfeatures.home.ui.di.HomeModule
 import com.example.a4k.dynamicfeatures.home.ui.menu.ToggleThemeCheckBox
+import kotlinx.android.synthetic.main.fragment_home.view.*
 import javax.inject.Inject
 
 private const val DELAY_TO_APPLY_THEME = 1000L
@@ -26,6 +28,7 @@ private const val DELAY_TO_APPLY_THEME = 1000L
 class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(
     layoutId = R.layout.fragment_home
 ) {
+
 
     @Inject
     lateinit var themeUtils: ThemeUtils
@@ -113,7 +116,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(
      */
     private fun setupToolbar() {
         setHasOptionsMenu(true)
-        requireCompatActivity().setSupportActionBar(viewBinding.toolbar)
+        requireCompatActivity().setSupportActionBar(viewBinding.appBarLayout.toolbar)
     }
 
     /**

@@ -1,7 +1,7 @@
-package com.example.a4k.di
+package com.example.a4k.android.di
 
 import android.content.Context
-import com.example.a4k.SampleApp
+import com.example.a4k.android.SampleApp
 import dagger.Module
 import dagger.Provides
 

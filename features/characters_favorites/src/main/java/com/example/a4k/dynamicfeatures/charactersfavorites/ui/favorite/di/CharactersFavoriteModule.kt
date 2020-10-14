@@ -1,13 +1,13 @@
-package com.example.a4k.dynamicfeatures.charactersfavorites.ui.di
+package com.example.a4k.dynamicfeatures.charactersfavorites.ui.favorite.di
 
 import androidx.annotation.VisibleForTesting
 import androidx.annotation.VisibleForTesting.PRIVATE
 import com.example.a4k.commons.ui.extensions.viewModel
 import com.example.a4k.core.database.characterfavorite.CharacterFavoriteRepository
 import com.example.a4k.core.di.scopes.FeatureScope
-import com.example.a4k.dynamicfeatures.charactersfavorites.ui.CharactersFavoriteFragment
-import com.example.a4k.dynamicfeatures.charactersfavorites.ui.CharactersFavoriteViewModel
-import com.example.a4k.dynamicfeatures.charactersfavorites.ui.adapter.CharactersFavoriteAdapter
+import com.example.a4k.dynamicfeatures.charactersfavorites.ui.favorite.CharactersFavoriteFragment
+import com.example.a4k.dynamicfeatures.charactersfavorites.ui.favorite.CharactersFavoriteViewModel
+import com.example.a4k.dynamicfeatures.charactersfavorites.ui.favorite.adapter.CharactersFavoriteAdapter
 import dagger.Module
 import dagger.Provides
 

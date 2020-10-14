@@ -1,4 +1,4 @@
-package com.example.a4k.dynamicfeatures.charactersfavorites.ui.adapter
+package com.example.a4k.dynamicfeatures.charactersfavorites.ui.favorite.adapter
 
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.ItemTouchHelper.ACTION_STATE_IDLE

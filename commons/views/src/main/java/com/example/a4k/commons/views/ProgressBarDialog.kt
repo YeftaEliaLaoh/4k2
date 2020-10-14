@@ -1,4 +1,4 @@
-package com.example.a4k.views
+package com.example.a4k.commons.views
 
 import android.content.Context
 import android.view.LayoutInflater

@@ -3,7 +3,7 @@ package com.example.a4k.dynamicfeatures.characterslist.ui.list.adapter.holders
 import android.view.LayoutInflater
 import androidx.recyclerview.widget.RecyclerView
 import com.example.a4k.commons.ui.base.BaseViewHolder
-import com.example.a4k.dynamicfeatures.characterslist.ui.databinding.ListItemCharacterBinding
+import com.example.a4k.dynamicfeatures.characterslist.databinding.ListItemCharacterBinding
 import com.example.a4k.dynamicfeatures.characterslist.ui.list.CharactersListViewModel
 import com.example.a4k.dynamicfeatures.characterslist.ui.list.model.CharacterItem
 

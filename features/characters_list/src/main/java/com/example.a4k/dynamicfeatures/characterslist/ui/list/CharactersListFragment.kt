@@ -4,12 +4,12 @@ import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.findNavController
 import androidx.paging.PagedList
-import com.example.a4k.SampleApp.Companion.coreComponent
+import com.example.a4k.android.SampleApp.Companion.coreComponent
 import com.example.a4k.commons.ui.base.BaseFragment
 import com.example.a4k.commons.ui.extensions.gridLayoutManager
 import com.example.a4k.commons.ui.extensions.observe
-import com.example.a4k.dynamicfeatures.characterslist.ui.R
-import com.example.a4k.dynamicfeatures.characterslist.ui.databinding.FragmentCharactersListBinding
+import com.example.a4k.dynamicfeatures.characterslist.R
+import com.example.a4k.dynamicfeatures.characterslist.databinding.FragmentCharactersListBinding
 import com.example.a4k.dynamicfeatures.characterslist.ui.list.adapter.CharactersListAdapter
 import com.example.a4k.dynamicfeatures.characterslist.ui.list.adapter.CharactersListAdapterState
 import com.example.a4k.dynamicfeatures.characterslist.ui.list.di.CharactersListModule

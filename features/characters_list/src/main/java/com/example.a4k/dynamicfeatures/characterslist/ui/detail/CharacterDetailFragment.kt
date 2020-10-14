@@ -4,15 +4,15 @@ import android.os.Bundle
 import android.view.View
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.example.a4k.SampleApp.Companion.coreComponent
-import com.google.android.material.snackbar.Snackbar
+import com.example.a4k.android.SampleApp.Companion.coreComponent
 import com.example.a4k.commons.ui.base.BaseFragment
 import com.example.a4k.commons.ui.extensions.observe
-import com.example.a4k.dynamicfeatures.characterslist.ui.R
-import com.example.a4k.dynamicfeatures.characterslist.ui.databinding.FragmentCharacterDetailBinding
+import com.example.a4k.commons.views.ProgressBarDialog
+import com.example.a4k.dynamicfeatures.characterslist.R
+import com.example.a4k.dynamicfeatures.characterslist.databinding.FragmentCharacterDetailBinding
 import com.example.a4k.dynamicfeatures.characterslist.ui.detail.di.CharacterDetailModule
 import com.example.a4k.dynamicfeatures.characterslist.ui.detail.di.DaggerCharacterDetailComponent
-import com.example.a4k.views.ProgressBarDialog
+import com.google.android.material.snackbar.Snackbar
 import javax.inject.Inject
 
 /**

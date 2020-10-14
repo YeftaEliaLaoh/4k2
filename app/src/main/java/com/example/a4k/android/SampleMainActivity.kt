@@ -1,4 +1,4 @@
-package com.example.a4k
+package com.example.a4k.android
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

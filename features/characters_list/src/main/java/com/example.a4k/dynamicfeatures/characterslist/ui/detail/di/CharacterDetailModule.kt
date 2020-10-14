@@ -3,13 +3,13 @@ package com.example.a4k.dynamicfeatures.characterslist.ui.detail.di
 import androidx.annotation.VisibleForTesting
 import androidx.annotation.VisibleForTesting.PRIVATE
 import com.example.a4k.commons.ui.extensions.viewModel
+import com.example.a4k.commons.views.ProgressBarDialog
 import com.example.a4k.core.database.characterfavorite.CharacterFavoriteRepository
 import com.example.a4k.core.di.scopes.FeatureScope
 import com.example.a4k.core.network.repositiories.MarvelRepository
 import com.example.a4k.dynamicfeatures.characterslist.ui.detail.CharacterDetailFragment
 import com.example.a4k.dynamicfeatures.characterslist.ui.detail.CharacterDetailViewModel
 import com.example.a4k.dynamicfeatures.characterslist.ui.detail.model.CharacterDetailMapper
-import com.example.a4k.views.ProgressBarDialog
 import dagger.Module
 import dagger.Provides
 

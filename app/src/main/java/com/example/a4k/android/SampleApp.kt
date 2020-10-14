@@ -1,11 +1,11 @@
-package com.example.a4k
+package com.example.a4k.android
 
 import android.content.Context
 import com.example.a4k.core.di.CoreComponent
 import com.example.a4k.core.di.DaggerCoreComponent
 import com.example.a4k.core.di.modules.ContextModule
 import com.example.a4k.core.utils.ThemeUtils
-import com.example.a4k.di.DaggerAppComponent
+import com.example.a4k.android.di.DaggerAppComponent
 import com.google.android.play.core.splitcompat.SplitCompatApplication
 
 import javax.inject.Inject

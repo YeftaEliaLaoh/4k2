@@ -1,4 +1,4 @@
-package com.example.a4k.dynamicfeatures.charactersfavorites.ui
+package com.example.a4k.dynamicfeatures.charactersfavorites.ui.favorite
 
 import com.example.a4k.commons.ui.base.BaseViewState
 

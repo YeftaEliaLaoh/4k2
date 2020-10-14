@@ -1,17 +1,18 @@
-package com.example.a4k.dynamicfeatures.charactersfavorites.ui
+package com.example.a4k.dynamicfeatures.charactersfavorites.ui.favorite
 
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.ItemTouchHelper
-import com.example.a4k.SampleApp
+import com.example.a4k.android.SampleApp
 import com.example.a4k.commons.ui.base.BaseFragment
 import com.example.a4k.commons.ui.extensions.observe
 import com.example.a4k.core.database.characterfavorite.CharacterFavorite
-import com.example.a4k.dynamicfeatures.charactersfavorites.ui.adapter.CharactersFavoriteAdapter
-import com.example.a4k.dynamicfeatures.charactersfavorites.ui.adapter.CharactersFavoriteTouchHelper
-import com.example.a4k.dynamicfeatures.charactersfavorites.ui.databinding.FragmentCharactersFavoriteListBinding
-import com.example.a4k.dynamicfeatures.charactersfavorites.ui.di.CharactersFavoriteModule
-import com.example.a4k.dynamicfeatures.charactersfavorites.ui.di.DaggerCharactersFavoriteComponent
+import com.example.a4k.dynamicfeatures.charactersfavorites.R
+import com.example.a4k.dynamicfeatures.charactersfavorites.databinding.FragmentCharactersFavoriteListBinding
+import com.example.a4k.dynamicfeatures.charactersfavorites.ui.favorite.adapter.CharactersFavoriteAdapter
+import com.example.a4k.dynamicfeatures.charactersfavorites.ui.favorite.adapter.CharactersFavoriteTouchHelper
+import com.example.a4k.dynamicfeatures.charactersfavorites.ui.favorite.di.CharactersFavoriteModule
+import com.example.a4k.dynamicfeatures.charactersfavorites.ui.favorite.di.DaggerCharactersFavoriteComponent
 import javax.inject.Inject
 
 /**

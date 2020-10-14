@@ -3,7 +3,7 @@ package com.example.a4k.dynamicfeatures.home.ui.menu
 import android.content.Context
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatCheckBox
-import com.example.a4k.dynamicfeatures.home.ui.R
+import com.example.a4k.dynamicfeatures.home.R
 
 /**
  * Animated button menu item check box to apply night/light mode.

@@ -1,4 +1,4 @@
-package com.example.a4k.dynamicfeatures.charactersfavorites.ui
+package com.example.a4k.dynamicfeatures.charactersfavorites.ui.favorite
 
 import androidx.annotation.VisibleForTesting
 import androidx.annotation.VisibleForTesting.PRIVATE
@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.a4k.core.database.characterfavorite.CharacterFavorite
 import com.example.a4k.core.database.characterfavorite.CharacterFavoriteRepository
+import com.example.a4k.dynamicfeatures.charactersfavorites.ui.favorite.CharactersFavoriteViewState
 import javax.inject.Inject
 import kotlinx.coroutines.launch
 

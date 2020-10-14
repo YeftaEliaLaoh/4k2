@@ -1,11 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.a4k.dynamicfeatures.charactersfavorites.ui">
+    package="com.example.a4k.dynamicfeatures.charactersfavorites">
 
     <dist:module
         dist:instant="true"
-        dist:title="@string/feature_characters_favorite">
+        dist:title="Home">
         <dist:delivery>
             <dist:install-time />
         </dist:delivery>

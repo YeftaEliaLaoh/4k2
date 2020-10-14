@@ -1,11 +1,11 @@
-package com.example.a4k.dynamicfeatures.charactersfavorites.ui.adapter
+package com.example.a4k.dynamicfeatures.charactersfavorites.ui.favorite.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.a4k.commons.ui.base.BaseListAdapter
 import com.example.a4k.core.database.characterfavorite.CharacterFavorite
-import com.example.a4k.dynamicfeatures.charactersfavorites.ui.adapter.holders.CharacterFavoriteViewHolder
+import com.example.a4k.dynamicfeatures.charactersfavorites.ui.favorite.adapter.holders.CharacterFavoriteViewHolder
 
 /**
  * Class for presenting characters favorite List data in a [RecyclerView], including computing

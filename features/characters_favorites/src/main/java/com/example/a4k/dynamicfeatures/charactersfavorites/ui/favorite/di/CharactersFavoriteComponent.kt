@@ -1,8 +1,8 @@
-package com.example.a4k.dynamicfeatures.charactersfavorites.ui.di
+package com.example.a4k.dynamicfeatures.charactersfavorites.ui.favorite.di
 
 import com.example.a4k.core.di.CoreComponent
 import com.example.a4k.core.di.scopes.FeatureScope
-import com.example.a4k.dynamicfeatures.charactersfavorites.ui.CharactersFavoriteFragment
+import com.example.a4k.dynamicfeatures.charactersfavorites.ui.favorite.CharactersFavoriteFragment
 import dagger.Component
 
 /**
