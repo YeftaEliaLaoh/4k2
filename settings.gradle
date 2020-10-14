@@ -1,0 +1,10 @@
+include ':app'
+include ':core'
+include ':commons:views'
+include ':commons:ui'
+
+include ':features:home'
+include ':features:characters_list'
+include ':features:characters_favorites'
+
+rootProject.name = "4k"
