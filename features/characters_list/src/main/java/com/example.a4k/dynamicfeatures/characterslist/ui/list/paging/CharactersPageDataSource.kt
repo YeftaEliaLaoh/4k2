@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.paging.PageKeyedDataSource
 import androidx.paging.PageKeyedDataSource.LoadParams
 import com.example.a4k.core.network.NetworkState
-import com.example.a4k.core.network.repositiories.MarvelRepository
+import com.example.a4k.core.network.repositiories.Repository
 import com.example.a4k.dynamicfeatures.characterslist.ui.list.model.CharacterItem
 import com.example.a4k.dynamicfeatures.characterslist.ui.list.model.CharacterItemMapper
 import javax.inject.Inject
@@ -14,18 +14,18 @@ import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
-const val PAGE_INIT_ELEMENTS = 0
-const val PAGE_MAX_ELEMENTS = 50
+const val PAGE_INIT_ELEMENTS = 1
+const val PAGE_MAX_ELEMENTS = 10
 
 /**
  * Incremental data loader for page-keyed content, where requests return keys for next/previous
- * pages. Obtaining paginated the Marvel characters.
+ * pages. Obtaining paginated the characters.
  *
  * @see PageKeyedDataSource
  */
 open class CharactersPageDataSource @Inject constructor(
     @VisibleForTesting(otherwise = PRIVATE)
-    val repository: MarvelRepository,
+    val repository: Repository,
     @VisibleForTesting(otherwise = PRIVATE)
     val scope: CoroutineScope,
     @VisibleForTesting(otherwise = PRIVATE)
@@ -55,8 +55,8 @@ open class CharactersPageDataSource @Inject constructor(
             networkState.postValue(NetworkState.Error())
         }) {
             val response = repository.getCharacters(
-                offset = PAGE_INIT_ELEMENTS,
-                limit = PAGE_MAX_ELEMENTS
+                page = PAGE_INIT_ELEMENTS,
+                results = PAGE_MAX_ELEMENTS
             )
             val data = mapper.map(response)
             callback.onResult(data, null, PAGE_MAX_ELEMENTS)
@@ -84,8 +84,8 @@ open class CharactersPageDataSource @Inject constructor(
             networkState.postValue(NetworkState.Error(true))
         }) {
             val response = repository.getCharacters(
-                offset = params.key,
-                limit = PAGE_MAX_ELEMENTS
+                page = params.key,
+                results = PAGE_MAX_ELEMENTS
             )
             val data = mapper.map(response)
             callback.onResult(data, params.key + PAGE_MAX_ELEMENTS)

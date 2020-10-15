@@ -5,7 +5,7 @@ import androidx.annotation.VisibleForTesting.PRIVATE
 import androidx.lifecycle.viewModelScope
 import com.example.a4k.commons.ui.extensions.viewModel
 import com.example.a4k.core.di.scopes.FeatureScope
-import com.example.a4k.core.network.repositiories.MarvelRepository
+import com.example.a4k.core.network.repositiories.Repository
 import com.example.a4k.dynamicfeatures.characterslist.ui.list.CharactersListFragment
 import com.example.a4k.dynamicfeatures.characterslist.ui.list.CharactersListViewModel
 import com.example.a4k.dynamicfeatures.characterslist.ui.list.adapter.CharactersListAdapter
@@ -50,7 +50,7 @@ class CharactersListModule(
     @Provides
     fun providesCharactersPageDataSource(
         viewModel: CharactersListViewModel,
-        repository: MarvelRepository,
+        repository: Repository,
         mapper: CharacterItemMapper
     ) = CharactersPageDataSource(
             repository = repository,

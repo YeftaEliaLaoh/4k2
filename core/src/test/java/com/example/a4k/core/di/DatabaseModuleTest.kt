@@ -1,13 +1,13 @@
 package com.example.a4k.core.di
 
 import android.content.Context
+import com.example.a4k.core.database.Database
+import com.example.a4k.core.database.characterfavorite.CharacterFavoriteDao
+import com.example.a4k.core.di.modules.DatabaseModule
 import com.nhaarman.mockitokotlin2.doReturn
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
-import com.example.a4k.core.database.MarvelDatabase
-import com.example.a4k.core.database.characterfavorite.CharacterFavoriteDao
-import com.example.a4k.core.di.modules.DatabaseModule
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Before
@@ -23,25 +23,25 @@ class DatabaseModuleTest {
     }
 
     @Test
-    fun verifyProvidedMarvelDatabase() {
+    fun verifyProvidedDatabase() {
         val context: Context = mock()
-        val marvelDatabase = databaseModule.provideMarvelDatabase(context)
+        val database = databaseModule.provideDatabase(context)
 
-        assertNotNull(marvelDatabase.characterFavoriteDao())
+        assertNotNull(database.characterFavoriteDao())
     }
 
     @Test
     fun verifyProvidedCharacterFavoriteDao() {
-        val marvelDatabase: MarvelDatabase = mock()
+        val database: Database = mock()
         val characterFavoriteDao: CharacterFavoriteDao = mock()
 
-        doReturn(characterFavoriteDao).whenever(marvelDatabase).characterFavoriteDao()
+        doReturn(characterFavoriteDao).whenever(database).characterFavoriteDao()
 
         assertEquals(
             characterFavoriteDao,
-            databaseModule.provideCharacterFavoriteDao(marvelDatabase)
+            databaseModule.provideCharacterFavoriteDao(database)
         )
-        verify(marvelDatabase).characterFavoriteDao()
+        verify(database).characterFavoriteDao()
     }
 
     @Test

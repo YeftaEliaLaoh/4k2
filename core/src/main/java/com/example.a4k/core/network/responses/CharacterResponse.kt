@@ -3,7 +3,7 @@ package com.example.a4k.core.network.responses
 import com.example.a4k.core.annotations.OpenForTesting
 
 /**
- * Marvel API character network response item.
+ * API character network response item.
  *
  * @param id The unique ID of the character resource.
  * @param name The name of the character.
@@ -12,8 +12,28 @@ import com.example.a4k.core.annotations.OpenForTesting
  */
 @OpenForTesting
 data class CharacterResponse(
-    val id: Long,
-    val name: String,
-    val description: String,
-    val thumbnail: CharacterThumbnailResponse
+
+    val gender: String,
+
+    val name: Name,
+
+    val location: Location,
+
+    val email: String,
+
+    val login: Login,
+
+    val registered: Registered,
+
+    val dob: Dob,
+
+    val phone: String,
+
+    val cell: String,
+
+    val id: Id,
+
+    val picture: Picture,
+
+    val nat: String
 )

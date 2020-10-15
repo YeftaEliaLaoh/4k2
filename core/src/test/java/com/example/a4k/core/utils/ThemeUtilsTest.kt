@@ -13,7 +13,7 @@ import org.junit.Test
 
 class ThemeUtilsTest : TestRobolectric() {
 
-    @get:Rule
+    /*@get:Rule
     val rule = ActivityScenarioRule(TestCompatActivity::class.java)
     private lateinit var scenario: ActivityScenario<TestCompatActivity>
 
@@ -82,5 +82,5 @@ class ThemeUtilsTest : TestRobolectric() {
 
             assertTrue(themeUtils.isLightTheme(it))
         }
-    }
+    }*/
 }

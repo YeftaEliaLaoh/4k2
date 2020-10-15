@@ -8,7 +8,7 @@ import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
 import com.example.a4k.core.BuildConfig
 import com.example.a4k.core.di.modules.NetworkModule
-import com.example.a4k.core.network.services.MarvelService
+import com.example.a4k.core.network.services.Service
 import okhttp3.logging.HttpLoggingInterceptor
 import org.junit.Assert.assertEquals
 import org.junit.Before
@@ -43,28 +43,28 @@ class NetworkModuleTest {
     fun verifyProvidedRetrofitBuilder() {
         val retrofit = networkModule.provideRetrofitBuilder()
 
-        assertEquals(BuildConfig.MARVEL_API_BASE_URL, retrofit.baseUrl().toUrl().toString())
+        assertEquals(BuildConfig.API_BASE_URL, retrofit.baseUrl().toUrl().toString())
     }
 
     @Test
-    fun verifyProvidedMarvelService() {
+    fun verifyProvidedService() {
         val retrofit = mock<Retrofit>()
-        val marvelService = mock<MarvelService>()
+        val service = mock<Service>()
         val serviceClassCaptor = argumentCaptor<Class<*>>()
 
-        doReturn(marvelService).whenever(retrofit).create<MarvelService>(any())
+        doReturn(service).whenever(retrofit).create<Service>(any())
 
-        networkModule.provideMarvelService(retrofit)
+        networkModule.provideService(retrofit)
 
         verify(retrofit).create(serviceClassCaptor.capture())
-        assertEquals(MarvelService::class.java, serviceClassCaptor.lastValue)
+        assertEquals(Service::class.java, serviceClassCaptor.lastValue)
     }
 
     @Test
-    fun verifyProvidedMarvelRepository() {
-        val marvelService = mock<MarvelService>()
-        val marvelRepository = networkModule.provideMarvelRepository(marvelService)
+    fun verifyProvidedRepository() {
+        val service = mock<Service>()
+        val repository = networkModule.provideRepository(service)
 
-        assertEquals(marvelService, marvelRepository.service)
+        assertEquals(service, repository.service)
     }
 }

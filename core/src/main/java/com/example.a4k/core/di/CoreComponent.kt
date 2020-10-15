@@ -6,8 +6,8 @@ import com.example.a4k.core.di.modules.ContextModule
 import com.example.a4k.core.di.modules.DatabaseModule
 import com.example.a4k.core.di.modules.NetworkModule
 import com.example.a4k.core.di.modules.UtilsModule
-import com.example.a4k.core.network.repositiories.MarvelRepository
-import com.example.a4k.core.network.services.MarvelService
+import com.example.a4k.core.network.repositiories.Repository
+import com.example.a4k.core.network.services.Service
 import com.example.a4k.core.utils.ThemeUtils
 import dagger.Component
 import javax.inject.Singleton
@@ -34,18 +34,18 @@ interface CoreComponent {
     fun context(): Context
 
     /**
-     * Provide dependency graph MarvelService
+     * Provide dependency graph Service
      *
-     * @return MarvelService
+     * @return Service
      */
-    fun marvelService(): MarvelService
+    fun service(): Service
 
     /**
-     * Provide dependency graph MarvelRepository
+     * Provide dependency graph Repository
      *
-     * @return MarvelRepository
+     * @return Repository
      */
-    fun marvelRepository(): MarvelRepository
+    fun repository(): Repository
 
     /**
      * Provide dependency graph CharacterFavoriteDao

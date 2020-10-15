@@ -42,8 +42,8 @@ class CharacterFavoriteRepositoryTest {
 
     @Test
     fun getCharacterFavorite_ShouldInvokeCorrectDaoMethod() = runBlocking {
-        val characterIdToFind = 1L
-        val characterIdCaptor = argumentCaptor<Long>()
+        val characterIdToFind = "1"
+        val characterIdCaptor = argumentCaptor<String>()
         characterFavoriteRepository.getCharacterFavorite(characterIdToFind)
 
         verify(characterFavoriteDao).getCharacterFavorite(characterIdCaptor.capture())
@@ -59,8 +59,8 @@ class CharacterFavoriteRepositoryTest {
 
     @Test
     fun deleteCharacterFavoriteById_ShouldInvokeCorrectDaoMethod() = runBlocking {
-        val characterIdToDelete = 1L
-        val characterIdCaptor = argumentCaptor<Long>()
+        val characterIdToDelete = "1"
+        val characterIdCaptor = argumentCaptor<String>()
         characterFavoriteRepository.deleteCharacterFavoriteById(characterIdToDelete)
 
         verify(characterFavoriteDao).deleteCharacterFavoriteById(characterIdCaptor.capture())

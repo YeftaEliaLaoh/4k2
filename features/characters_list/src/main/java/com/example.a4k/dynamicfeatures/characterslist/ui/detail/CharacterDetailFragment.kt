@@ -41,7 +41,7 @@ class CharacterDetailFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         observe(viewModel.state, ::onViewStateChange)
-        viewModel.loadCharacterDetail(args.characterId)
+       // viewModel.loadCharacterDetail(args.characterId)
     }
 
     /**

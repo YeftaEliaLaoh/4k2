@@ -6,7 +6,6 @@ apply plugin: 'kotlin-allopen'
 apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 allOpen {
-    // allows mocking for classes w/o directly opening them for release builds
     annotation("com.example.a4k.core.annotations.OpenClass")
 }
 

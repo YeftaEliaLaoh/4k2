@@ -6,7 +6,7 @@ import com.example.a4k.commons.ui.extensions.viewModel
 import com.example.a4k.commons.views.ProgressBarDialog
 import com.example.a4k.core.database.characterfavorite.CharacterFavoriteRepository
 import com.example.a4k.core.di.scopes.FeatureScope
-import com.example.a4k.core.network.repositiories.MarvelRepository
+import com.example.a4k.core.network.repositiories.Repository
 import com.example.a4k.dynamicfeatures.characterslist.ui.detail.CharacterDetailFragment
 import com.example.a4k.dynamicfeatures.characterslist.ui.detail.CharacterDetailViewModel
 import com.example.a4k.dynamicfeatures.characterslist.ui.detail.model.CharacterDetailMapper
@@ -27,7 +27,7 @@ class CharacterDetailModule(
     /**
      * Create a provider method binding for [CharacterDetailViewModel].
      *
-     * @param marvelRepository
+     * @param repository
      * @param characterFavoriteRepository handler character favorite repository
      * @param characterDetailMapper mapper to parse view model
      *
@@ -36,12 +36,12 @@ class CharacterDetailModule(
     @FeatureScope
     @Provides
     fun providesCharacterDetailViewModel(
-        marvelRepository: MarvelRepository,
+        repository: Repository,
         characterFavoriteRepository: CharacterFavoriteRepository,
         characterDetailMapper: CharacterDetailMapper
     ) = fragment.viewModel {
         CharacterDetailViewModel(
-            marvelRepository = marvelRepository,
+            repository = repository,
             characterFavoriteRepository = characterFavoriteRepository,
             characterDetailMapper = characterDetailMapper
         )

@@ -12,8 +12,5 @@ import com.example.a4k.core.annotations.OpenForTesting
  */
 @OpenForTesting
 data class BaseResponse<T>(
-    val code: Any,
-    val status: String,
-    val message: String,
-    val data: DataResponse<T>
+    val results: List<T>
 )

@@ -3,7 +3,7 @@ package com.example.a4k.core.di.modules
 import android.content.Context
 import androidx.room.Room
 import com.example.a4k.core.BuildConfig
-import com.example.a4k.core.database.MarvelDatabase
+import com.example.a4k.core.database.Database
 import com.example.a4k.core.database.characterfavorite.CharacterFavoriteDao
 import com.example.a4k.core.database.characterfavorite.CharacterFavoriteRepository
 import com.example.a4k.core.database.migrations.MIGRATION_1_2
@@ -21,18 +21,18 @@ import javax.inject.Singleton
 class DatabaseModule {
 
     /**
-     * Create a provider method binding for [MarvelDatabase].
+     * Create a provider method binding for [Database].
      *
-     * @return Instance of marvel database.
+     * @return Instance of database.
      * @see Provides
      */
     @Singleton
     @Provides
-    fun provideMarvelDatabase(context: Context) =
+    fun provideDatabase(context: Context) =
         Room.databaseBuilder(
             context,
-            MarvelDatabase::class.java,
-            BuildConfig.MARVEL_DATABASE_NAME
+            Database::class.java,
+            BuildConfig.DATABASE_NAME
         ).addMigrations(MIGRATION_1_2)
             .build()
 
@@ -44,8 +44,8 @@ class DatabaseModule {
      */
     @Singleton
     @Provides
-    fun provideCharacterFavoriteDao(marvelDatabase: MarvelDatabase) =
-        marvelDatabase.characterFavoriteDao()
+    fun provideCharacterFavoriteDao(database: Database) =
+        database.characterFavoriteDao()
 
     /**
      * Create a provider method binding for [CharacterFavoriteRepository].

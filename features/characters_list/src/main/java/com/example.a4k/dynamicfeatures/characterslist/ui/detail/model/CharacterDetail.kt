@@ -7,7 +7,7 @@ import com.example.a4k.dynamicfeatures.characterslist.ui.detail.CharacterDetailF
  */
 data class CharacterDetail(
     val id: Long,
-    val name: String,
-    val description: String,
+    val username: String,
+    val email: String,
     val imageUrl: String
 )

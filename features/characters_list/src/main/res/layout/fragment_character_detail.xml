@@ -27,7 +27,7 @@
                 android:fitsSystemWindows="true"
                 app:contentScrim="?attr/colorPrimary"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed"
-                app:title="@{viewModel.data.name}">
+                app:title="@{viewModel.data.username}">
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:layout_width="match_parent"

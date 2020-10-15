@@ -2,8 +2,8 @@ package com.example.a4k.core.di.modules
 
 import com.example.a4k.core.BuildConfig
 import com.example.a4k.core.di.CoreComponent
-import com.example.a4k.core.network.repositiories.MarvelRepository
-import com.example.a4k.core.network.services.MarvelService
+import com.example.a4k.core.network.repositiories.Repository
+import com.example.a4k.core.network.services.Service
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -60,27 +60,27 @@ class NetworkModule {
     @Provides
     fun provideRetrofitBuilder() =
         Retrofit.Builder()
-            .baseUrl(BuildConfig.MARVEL_API_BASE_URL)
+            .baseUrl(BuildConfig.API_BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
     /**
-     * Create a provider method binding for [MarvelService].
+     * Create a provider method binding for [Service].
      *
-     * @return Instance of marvel service.
+     * @return Instance of service.
      * @see Provides
      */
     @Singleton
     @Provides
-    fun provideMarvelService(retrofit: Retrofit) = retrofit.create(MarvelService::class.java)
+    fun provideService(retrofit: Retrofit) = retrofit.create(Service::class.java)
 
     /**
-     * Create a provider method binding for [MarvelRepository].
+     * Create a provider method binding for [Repository].
      *
-     * @return Instance of marvel repository.
+     * @return Instance of repository.
      * @see Provides
      */
     @Singleton
     @Provides
-    fun provideMarvelRepository(service: MarvelService) = MarvelRepository(service)
+    fun provideRepository(service: Service) = Repository(service)
 }

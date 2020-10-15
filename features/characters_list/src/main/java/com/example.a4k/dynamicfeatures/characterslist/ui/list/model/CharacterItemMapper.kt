@@ -3,8 +3,7 @@ package com.example.a4k.dynamicfeatures.characterslist.ui.list.model
 import com.example.a4k.core.mapper.Mapper
 import com.example.a4k.core.network.responses.BaseResponse
 import com.example.a4k.core.network.responses.CharacterResponse
-
-private const val IMAGE_URL_FORMAT = "%s.%s"
+import kotlin.random.Random
 
 /**
  * Helper class to transforms network response to visual model, catching the necessary data.
@@ -20,15 +19,12 @@ open class CharacterItemMapper : Mapper<BaseResponse<CharacterResponse>, List<Ch
      * @return List of parsed characters items.
      */
     override suspend fun map(from: BaseResponse<CharacterResponse>) =
-        from.data.results.map {
+        from.results.map {
             CharacterItem(
-                id = it.id,
-                name = it.name,
-                description = it.description,
-                imageUrl = IMAGE_URL_FORMAT.format(
-                    it.thumbnail.path.replace("http", "https"),
-                    it.thumbnail.extension
+                id = Random.nextLong(),
+                username = it.login.username,
+                email = it.email,
+                imageUrl = it.picture.large
                 )
-            )
         }
 }

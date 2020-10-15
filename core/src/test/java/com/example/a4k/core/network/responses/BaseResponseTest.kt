@@ -11,18 +11,18 @@ class BaseResponseTest {
         val code = 200
         val status = "Ok"
         val message = "Ok"
-        val data: DataResponse<String> = mock()
+        val results: List<String> = mock()
 
         val baseResponse = BaseResponse(
-            code = code,
+            /*code = code,
             status = status,
-            message = message,
-            data = data
+            message = message,*/
+            results = results
         )
 
-        Assert.assertEquals(code, baseResponse.code)
+        /*Assert.assertEquals(code, baseResponse.code)
         Assert.assertEquals(status, baseResponse.status)
-        Assert.assertEquals(message, baseResponse.message)
-        Assert.assertEquals(data, baseResponse.data)
+        Assert.assertEquals(message, baseResponse.message)*/
+        Assert.assertEquals(results, baseResponse.results)
     }
 }

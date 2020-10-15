@@ -7,4 +7,6 @@ include ':features:home'
 include ':features:characters_list'
 include ':features:characters_favorites'
 
+include ':libraries:test_utils'
+
 rootProject.name = "4k"

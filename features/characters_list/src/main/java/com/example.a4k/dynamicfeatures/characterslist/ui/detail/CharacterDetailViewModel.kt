@@ -7,7 +7,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.a4k.core.database.characterfavorite.CharacterFavoriteRepository
-import com.example.a4k.core.network.repositiories.MarvelRepository
+import com.example.a4k.core.network.repositiories.Repository
 import com.example.a4k.dynamicfeatures.characterslist.ui.detail.model.CharacterDetail
 import com.example.a4k.dynamicfeatures.characterslist.ui.detail.model.CharacterDetailMapper
 import javax.inject.Inject
@@ -20,7 +20,7 @@ import kotlinx.coroutines.launch
  */
 class CharacterDetailViewModel @Inject constructor(
     @VisibleForTesting(otherwise = PRIVATE)
-    val marvelRepository: MarvelRepository,
+    val repository: Repository,
     @VisibleForTesting(otherwise = PRIVATE)
     val characterFavoriteRepository: CharacterFavoriteRepository,
     @VisibleForTesting(otherwise = PRIVATE)
@@ -44,11 +44,11 @@ class CharacterDetailViewModel @Inject constructor(
      *
      * @param characterId Character identifier.
      */
-    fun loadCharacterDetail(characterId: Long) {
+   /* fun loadCharacterDetail(characterId: Long) {
         _state.postValue(CharacterDetailViewState.Loading)
         viewModelScope.launch {
             try {
-                val result = marvelRepository.getCharacter(characterId)
+                val result = repository.getCharacter(characterId)
                 _data.postValue(characterDetailMapper.map(result))
 
                 characterFavoriteRepository.getCharacterFavorite(characterId)?.let {
@@ -60,7 +60,7 @@ class CharacterDetailViewModel @Inject constructor(
                 _state.postValue(CharacterDetailViewState.Error)
             }
         }
-    }
+    }*/
 
     /**
      * Store selected character to database favorite list.
@@ -70,7 +70,7 @@ class CharacterDetailViewModel @Inject constructor(
             viewModelScope.launch {
                 characterFavoriteRepository.insertCharacterFavorite(
                     id = it.id,
-                    name = it.name,
+                    name = it.username,
                     imageUrl = it.imageUrl
                 )
                 _state.postValue(CharacterDetailViewState.AddedToFavorite)

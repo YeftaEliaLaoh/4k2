@@ -18,7 +18,7 @@ import com.example.a4k.dynamicfeatures.characterslist.ui.list.model.CharacterIte
 import javax.inject.Inject
 
 /**
- * View listing the all marvel characters with option to display the detail view.
+ * View listing the all characters with option to display the detail view.
  *
  * @see BaseFragment
  */
