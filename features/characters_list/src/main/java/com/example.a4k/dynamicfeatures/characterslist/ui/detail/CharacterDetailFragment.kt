@@ -1,7 +1,16 @@
 package com.example.a4k.dynamicfeatures.characterslist.ui.detail
 
+import android.app.Activity
+import android.content.ContentValues
+import android.content.Intent
+import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.View
+import android.widget.ImageView
+import android.widget.Toast
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.a4k.android.SampleApp.Companion.coreComponent
@@ -15,6 +24,7 @@ import com.example.a4k.dynamicfeatures.characterslist.ui.detail.di.CharacterDeta
 import com.example.a4k.dynamicfeatures.characterslist.ui.detail.di.DaggerCharacterDetailComponent
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_character_detail.view.*
+import kotlinx.android.synthetic.main.list_item_character.view.*
 import javax.inject.Inject
 
 /**
@@ -35,6 +45,9 @@ class CharacterDetailFragment :
 
     private val args: CharacterDetailFragmentArgs by navArgs()
 
+    lateinit var imageUri : Uri
+    var appCompatImageView: ImageView? = null
+
     /**
      * Called to have the fragment instantiate its user interface view.
      *
@@ -45,13 +58,31 @@ class CharacterDetailFragment :
      */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        requireCompatActivity().
-        observe(viewModel.state, ::onViewStateChange)
-        viewModel.loadCharacterDetail(args.characterId,args.characterUsername,args.characterEmail,args.characterImage)
+        requireCompatActivity().observe(viewModel.state, ::onViewStateChange)
+        viewModel.loadCharacterDetail(
+            args.characterId,
+            args.characterUsername,
+            args.characterEmail,
+            args.characterImage
+        )
+        appCompatImageView = view.character_image
         view.circleMenu.setOnItemClickListener { menuButton ->
-            if (menuButton.favorite != null) fileChooserDialog.show()
-            if (menuButton.search != null) progressDialog.show()
+            if (menuButton.favorite != null)
+                fileChooserDialog.show()
+            else if (menuButton.search != null) openCamera()
         }
+    }
+
+    fun openCamera() {
+        val values = ContentValues()
+        values.put(MediaStore.Images.Media.TITLE, "New Picture")
+        values.put(MediaStore.Images.Media.DESCRIPTION, "From the Camera")
+         imageUri =
+             context?.getContentResolver()
+                 ?.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)!!;
+        val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, imageUri)
+        startActivityForResult(cameraIntent,100)
     }
 
     /**
@@ -97,6 +128,30 @@ class CharacterDetailFragment :
             is CharacterDetailViewState.Dismiss ->
                 findNavController().navigateUp()
             else -> progressDialog.dismiss()
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        when (requestCode) {
+            100 -> if (resultCode == Activity.RESULT_OK) {
+                val selectedImage: Uri = imageUri
+                activity!!.contentResolver.notifyChange(selectedImage, null)
+                val cr = activity!!.contentResolver
+                val bitmap: Bitmap
+                try {
+                    bitmap = MediaStore.Images.Media
+                        .getBitmap(cr, selectedImage)
+                    appCompatImageView?.setImageBitmap(bitmap)
+                    Toast.makeText(
+                        activity, selectedImage.toString(),
+                        Toast.LENGTH_LONG
+                    ).show()
+                } catch (e: Exception) {
+                    Toast.makeText(activity, "Failed to load", Toast.LENGTH_SHORT)
+                        .show()
+                }
+            }
         }
     }
 }
