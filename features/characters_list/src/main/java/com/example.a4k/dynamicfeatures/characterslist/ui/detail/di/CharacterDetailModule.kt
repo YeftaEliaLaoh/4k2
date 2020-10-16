@@ -3,6 +3,7 @@ package com.example.a4k.dynamicfeatures.characterslist.ui.detail.di
 import androidx.annotation.VisibleForTesting
 import androidx.annotation.VisibleForTesting.PRIVATE
 import com.example.a4k.commons.ui.extensions.viewModel
+import com.example.a4k.commons.views.FileChooserDialog
 import com.example.a4k.commons.views.ProgressBarDialog
 import com.example.a4k.core.database.characterfavorite.CharacterFavoriteRepository
 import com.example.a4k.core.di.scopes.FeatureScope
@@ -66,4 +67,8 @@ class CharacterDetailModule(
     @FeatureScope
     @Provides
     fun providesProgressBarDialog() = ProgressBarDialog(fragment.requireContext())
+
+    @FeatureScope
+    @Provides
+    fun providesFileChooserDialog() = FileChooserDialog(fragment.requireContext())
 }

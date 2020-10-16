@@ -7,12 +7,14 @@ import androidx.navigation.fragment.navArgs
 import com.example.a4k.android.SampleApp.Companion.coreComponent
 import com.example.a4k.commons.ui.base.BaseFragment
 import com.example.a4k.commons.ui.extensions.observe
+import com.example.a4k.commons.views.FileChooserDialog
 import com.example.a4k.commons.views.ProgressBarDialog
 import com.example.a4k.dynamicfeatures.characterslist.R
 import com.example.a4k.dynamicfeatures.characterslist.databinding.FragmentCharacterDetailBinding
 import com.example.a4k.dynamicfeatures.characterslist.ui.detail.di.CharacterDetailModule
 import com.example.a4k.dynamicfeatures.characterslist.ui.detail.di.DaggerCharacterDetailComponent
 import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.fragment_character_detail.view.*
 import javax.inject.Inject
 
 /**
@@ -28,6 +30,9 @@ class CharacterDetailFragment :
     @Inject
     lateinit var progressDialog: ProgressBarDialog
 
+    @Inject
+    lateinit var fileChooserDialog: FileChooserDialog
+
     private val args: CharacterDetailFragmentArgs by navArgs()
 
     /**
@@ -40,8 +45,13 @@ class CharacterDetailFragment :
      */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        requireCompatActivity().
         observe(viewModel.state, ::onViewStateChange)
         viewModel.loadCharacterDetail(args.characterId,args.characterUsername,args.characterEmail,args.characterImage)
+        view.circleMenu.setOnItemClickListener { menuButton ->
+            if (menuButton.favorite != null) fileChooserDialog.show()
+            if (menuButton.search != null) progressDialog.show()
+        }
     }
 
     /**

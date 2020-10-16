@@ -71,6 +71,8 @@ dependencies {
     implementation "androidx.paging:paging-runtime-ktx:2.1.1"
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
+    implementation 'com.github.imangazalievm:circlemenu:1.1.1'
+
     testImplementation project (':libraries:test_utils')
     testImplementation "junit:junit:4.12"
     testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0"
