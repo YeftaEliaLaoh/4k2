@@ -25,6 +25,6 @@ open class CharacterItemMapper : Mapper<BaseResponse<CharacterResponse>, List<Ch
                 username = it.login.username,
                 email = it.email,
                 imageUrl = it.picture.large
-                )
+            )
         }
 }

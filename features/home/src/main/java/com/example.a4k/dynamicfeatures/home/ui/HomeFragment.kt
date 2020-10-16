@@ -4,21 +4,19 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
+import android.widget.PopupMenu
 import androidx.lifecycle.Observer
 import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
 import com.example.a4k.android.SampleApp
 import com.example.a4k.commons.ui.base.BaseFragment
 import com.example.a4k.commons.ui.extensions.setupWithNavController
-import com.example.a4k.core.utils.ThemeUtils
 import com.example.a4k.dynamicfeatures.home.R
 import com.example.a4k.dynamicfeatures.home.databinding.FragmentHomeBinding
 import com.example.a4k.dynamicfeatures.home.ui.di.DaggerHomeComponent
 import com.example.a4k.dynamicfeatures.home.ui.di.HomeModule
 import com.example.a4k.dynamicfeatures.home.ui.menu.ToggleThemeCheckBox
+import com.example.dynamicfeature.setting.ui.language.LanguageDialog
 import kotlinx.android.synthetic.main.fragment_home.view.*
-import javax.inject.Inject
-
-private const val DELAY_TO_APPLY_THEME = 1000L
 
 /**
  * Home principal view containing bottom navigation bar with different characters tabs.
@@ -28,10 +26,6 @@ private const val DELAY_TO_APPLY_THEME = 1000L
 class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(
     layoutId = R.layout.fragment_home
 ) {
-
-
-    @Inject
-    lateinit var themeUtils: ThemeUtils
 
     private val navGraphIds = listOf(
         R.navigation.navigation_characters_list_graph,
@@ -80,9 +74,22 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(
         menu.findItem(R.id.menu_toggle_theme).apply {
             val actionView = this.actionView
             if (actionView is ToggleThemeCheckBox) {
-                actionView.isChecked = themeUtils.isDarkTheme(requireContext())
-                actionView.setOnCheckedChangeListener { _, isChecked ->
-                    themeUtils.setNightMode(isChecked, DELAY_TO_APPLY_THEME)
+                actionView.setOnCheckedChangeListener { _, _ ->
+                    val popup = PopupMenu(context, actionView)
+                    popup.menuInflater.inflate(R.menu.setting_menu, popup.menu)
+                    popup.setOnMenuItemClickListener { item ->
+                        when (item.itemId) {
+                            R.id.setting_language -> {
+                                LanguageDialog(context)
+                            }
+                            R.id.exit_app -> {
+                                activity?.moveTaskToBack(true)
+                                activity?.finish()
+                            }
+                        }
+                        true
+                    }
+                    popup.show()
                 }
             }
         }

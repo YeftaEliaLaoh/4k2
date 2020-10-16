@@ -1,0 +1,11 @@
+<resources>
+
+    <!--Home tab items-->
+    <string name="home_tab_characters">Karakter</string>
+    <string name="home_tab_favorites">Favorit</string>
+
+    <!--Home toolbar items-->
+    <string name="home_toolbar_theme">Alihkan Tema</string>
+    <string name="exit">Keluar</string>
+    <string name="setting_language">Mengatur Bahasa</string>
+</resources>

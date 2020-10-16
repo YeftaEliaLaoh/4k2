@@ -58,7 +58,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 
-    dynamicFeatures = [':features:home', ':features:characters_list', ':features:characters_favorites']
+    dynamicFeatures = [':features:home', ':features:characters_list', ':features:characters_favorites', ':features:setting']
 
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()

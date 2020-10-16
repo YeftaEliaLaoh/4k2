@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="10dp">
+
+    <RelativeLayout
+        android:id="@+id/language_setting_layout_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="18dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="18dp"
+        android:paddingBottom="8dp">
+
+        <TextView
+            android:id="@+id/language_setting_text_header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/language_setting" />
+
+        <ImageView
+            android:id="@+id/language_setting_button_dismiss"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="18dp"
+            android:background="@drawable/selector_button_close"
+            android:contentDescription="@string/close" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="18dp"
+        android:paddingTop="50dp"
+        android:paddingEnd="18dp"
+        android:paddingBottom="8dp">
+
+        <RadioGroup
+            android:id="@+id/rdGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/radioEnglish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/english" />
+
+            <RadioButton
+                android:id="@+id/radioIndonesia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bahasa" />
+
+        </RadioGroup>
+
+    </RelativeLayout>
+
+</RelativeLayout>

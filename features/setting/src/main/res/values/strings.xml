@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="close">Close</string>
+    <string name="english">English</string>
+    <string name="bahasa">Bahasa</string>
+    <string name="language_setting">Language Setting</string>
+</resources>

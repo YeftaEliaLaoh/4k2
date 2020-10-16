@@ -6,6 +6,7 @@ include ':commons:ui'
 include ':features:home'
 include ':features:characters_list'
 include ':features:characters_favorites'
+include ':features:setting'
 
 include ':libraries:test_utils'
 

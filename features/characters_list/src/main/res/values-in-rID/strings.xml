@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Characters list-->
+    <string name="characters_list_empty_text">Daftar karakter kosong</string>
+    <string name="characters_list_error_text">Ups… terjadi kesalahan pada daftar karakter yang diperoleh, geser ke bawah untuk mencoba lagi</string>
+    <string name="characters_list_add_error_text">Kesalahan saat mengambil lebih banyak karakter</string>
+    <string name="characters_list_add_retry_button">Mencoba kembali</string>
+
+    <!--Character detail-->
+    <string name="character_detail_dialog_loading_text">Memuat detail ...</string>
+    <string name="character_detail_dialog_error_text">Memuat detail ...Memuat detail ...Memuat detail ...</string>
+    <string name="character_detail_added_to_favorite_message">Ditambahkan ke daftar favorit Anda</string>
+    <string name="character_detail_image_content_description">Gambar dari karakter yang dipilih</string>
+</resources>
