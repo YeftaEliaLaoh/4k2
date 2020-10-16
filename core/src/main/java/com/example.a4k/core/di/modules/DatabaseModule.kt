@@ -6,7 +6,6 @@ import com.example.a4k.core.BuildConfig
 import com.example.a4k.core.database.Database
 import com.example.a4k.core.database.characterfavorite.CharacterFavoriteDao
 import com.example.a4k.core.database.characterfavorite.CharacterFavoriteRepository
-import com.example.a4k.core.database.migrations.MIGRATION_1_2
 import com.example.a4k.core.di.CoreComponent
 import dagger.Module
 import dagger.Provides
@@ -33,8 +32,7 @@ class DatabaseModule {
             context,
             Database::class.java,
             BuildConfig.DATABASE_NAME
-        ).addMigrations(MIGRATION_1_2)
-            .build()
+        ).build()
 
     /**
      * Create a provider method binding for [CharacterFavoriteDao].

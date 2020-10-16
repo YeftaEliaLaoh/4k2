@@ -77,7 +77,19 @@ class CharactersListViewModel
      *
      * @param characterId Character identifier.
      */
-    fun openCharacterDetail(characterId: Long) {
-        event.postValue(CharactersListViewEvent.OpenCharacterDetail(characterId))
+    fun openCharacterDetail(
+        characterId: Long,
+        characterUserName: String,
+        characterEmail: String,
+        characterImage: String
+    ) {
+        event.postValue(
+            CharactersListViewEvent.OpenCharacterDetail(
+                characterId,
+                characterUserName,
+                characterEmail,
+                characterImage
+            )
+        )
     }
 }

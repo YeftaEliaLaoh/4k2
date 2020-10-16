@@ -44,13 +44,23 @@ class CharacterDetailViewModel @Inject constructor(
      *
      * @param characterId Character identifier.
      */
-   /* fun loadCharacterDetail(characterId: Long) {
+    fun loadCharacterDetail(
+        characterId: Long,
+        characterName: String,
+        characterEmail: String,
+        characterImage: String
+    ) {
         _state.postValue(CharacterDetailViewState.Loading)
         viewModelScope.launch {
             try {
-                val result = repository.getCharacter(characterId)
-                _data.postValue(characterDetailMapper.map(result))
-
+                _data.postValue(
+                    (CharacterDetail(
+                        characterId,
+                        characterName,
+                        characterEmail,
+                        characterImage
+                    ))
+                )
                 characterFavoriteRepository.getCharacterFavorite(characterId)?.let {
                     _state.postValue(CharacterDetailViewState.AlreadyAddedToFavorite)
                 } ?: run {
@@ -60,7 +70,7 @@ class CharacterDetailViewModel @Inject constructor(
                 _state.postValue(CharacterDetailViewState.Error)
             }
         }
-    }*/
+    }
 
     /**
      * Store selected character to database favorite list.

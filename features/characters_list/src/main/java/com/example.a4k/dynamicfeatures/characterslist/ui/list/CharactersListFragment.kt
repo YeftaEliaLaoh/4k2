@@ -109,7 +109,7 @@ class CharactersListFragment :
             is CharactersListViewEvent.OpenCharacterDetail ->
                 findNavController().navigate(
                     CharactersListFragmentDirections
-                        .actionCharactersListFragmentToCharacterDetailFragment(viewEvent.id))
+                        .actionCharactersListFragmentToCharacterDetailFragment(viewEvent.id,viewEvent.username,viewEvent.email,viewEvent.image))
         }
     }
 }

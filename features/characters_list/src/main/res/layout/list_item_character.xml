@@ -16,7 +16,7 @@
     <com.google.android.material.card.MaterialCardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="@{() -> viewModel.openCharacterDetail(character.id)}"
+        android:onClick="@{() -> viewModel.openCharacterDetail(character.id,character.username,character.email,character.imageUrl)}"
         app:cardCornerRadius="@dimen/characters_list_item_corner_radius"
         app:cardElevation="@dimen/characters_list_item_elevation"
         app:cardBackgroundColor="@android:color/transparent">

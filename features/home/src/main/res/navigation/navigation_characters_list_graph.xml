@@ -24,5 +24,14 @@
         <argument
             android:name="character_id"
             app:argType="long" />
+        <argument
+            android:name="character_username"
+            app:argType="string" />
+        <argument
+            android:name="character_email"
+            app:argType="string" />
+        <argument
+            android:name="character_image"
+            app:argType="string" />
     </fragment>
 </navigation>

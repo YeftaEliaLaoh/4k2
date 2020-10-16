@@ -10,5 +10,10 @@ sealed class CharactersListViewEvent {
      *
      * @param id Character identifier
      */
-    data class OpenCharacterDetail(val id: Long) : CharactersListViewEvent()
+    data class OpenCharacterDetail(
+        val id: Long,
+        val username: String,
+        val email: String,
+        val image: String
+    ) : CharactersListViewEvent()
 }
